@@ -1,7 +1,6 @@
 package jwt
 
 import (
-	"fmt"
 	"testing"
 	"time"
 )
@@ -148,8 +147,6 @@ QfOQn8U/vy3zpfZ/Ndq8xLdZTPEv4KfWivw/1ecHsYvFqWxCLyQBpTtUjQ==
 				t.Errorf("Generate() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-
-			fmt.Println(tokenStr)
 
 			verifier, err := NewTokenVerifier(tt.fields.signingMethod, tt.fields.publicKey)
 			if (err != nil) != tt.wantErr {
